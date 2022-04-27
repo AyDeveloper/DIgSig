@@ -6,10 +6,6 @@ This tends to save gas and reduce the amount of transactions performed onchain.
 
 # Procedure
 
-create a message to sign
-hash the message
-sign the message offchain using ur private key!! on metamask
+create a message to sign, hash the message, sign the message offchain using ur private key!! on metamask
 
-verify the message on chain
-recover signer from the signature and hash
-compare recovered signer to the original signer 
+verify the message on chain, recover signer from the signature and hash, compare recovered signer to the original signer 
