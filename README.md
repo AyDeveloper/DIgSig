@@ -23,5 +23,5 @@ Cerify the message on chain, recover signer from the signature and hash, compare
 
 
 
-#Note
+# Note
 This is just for learning purpose whosoever that is signing the message is not expected to pay gas fees. The actor pays for the gas fees and perform the real transaction.
