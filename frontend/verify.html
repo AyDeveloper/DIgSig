@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigSig</title>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">    
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logoImg">
+                <h2>Dig<span>Sig</span></h2>
+            </div>
+
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="verify.html">Verify</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="mainCenter">
+            <div class="mainText">
+                <h3>DigSig</h3>
+                <p>A playground to learn about digital signatures and how its useful for metatransactions. Verify signature and transfer matic to the recipient</p>
+            </div>  
+            
+            <div class="mainForm">
+                <div class="formTx">
+                    <input type="text" class="validSig" placeholder="input valid signature">
+                    <button class="verifyBtn">Verify</button>
+                </div>
+                <div class="formOutput">
+                    <input type="text">
+                </div>
+            </div>
+
+            <div id="notifications" style="margin-top: 3rem;">
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footerCenter">
+            <div class="copyright">
+                <p>Made with <i class="icon-heart"></i> by Oxpam_pam</p>
+            </div>
+    
+            <div class="socials">
+                <a href="https://github.com/AyDeveloper" target="_blank"><i class="icon-github-sign"></i></a>
+                <a href="https://twitter.com/Oxpam_pam" target="_blank"><i class="icon-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./js/app/verify.js"></script>
+</html>
