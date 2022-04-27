@@ -4,7 +4,8 @@
 This project seeks to implement digital signatures, work on signing messages offchain and verifying it on chain.
 This tends to save gas and reduce the amount of transactions performed onchain.
 
-#Procedure
+# Procedure
+
 create a message to sign
 hash the message
 sign the message offchain using ur private key!! on metamask
