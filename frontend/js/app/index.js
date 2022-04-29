@@ -24,10 +24,12 @@ async function getSignature(){
 
     const object = {"addr":addr,"amount":amount, "nounce": nounce};
     const hash = ethers.utils.hashMessage(JSON.stringify(object));
+
     const signature = await ethereum.request({
         method: "personal_sign",
         params: [hash, ethereum.selectedAddress],
       });
+	  
     const hashSig = hash+signature;
 	console.log(hash);
     document.querySelector(".formOutput input").style.display = "block";
