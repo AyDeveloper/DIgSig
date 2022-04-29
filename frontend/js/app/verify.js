@@ -1,33 +1,14 @@
 login();
 
-const contractAddr = "0x0bc6dF6A8825909bD45BEaBB6daA24311Cd74bf6";//your contract address here
+const contractAddr = "0xA3A07309A9C8D0464380e2d6260c9278414D72e3";//your contract address here
 const contractABI =[
 	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
 				"internalType": "address",
-				"name": "_who",
+				"name": "from",
 				"type": "address"
-			}
-		],
-		"name": "sendTx",
-		"type": "event"
-	},
-	{
-		"inputs": [
+			},
 			{
 				"internalType": "address",
 				"name": "to",
@@ -70,30 +51,28 @@ const contractABI =[
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_addr",
-				"type": "address"
-			}
-		],
-		"name": "setSigner",
-		"outputs": [],
+		"inputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
+		"type": "constructor"
 	},
 	{
-		"inputs": [],
-		"name": "signer",
-		"outputs": [
+		"anonymous": false,
+		"inputs": [
 			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
 				"internalType": "address",
-				"name": "",
+				"name": "_who",
 				"type": "address"
 			}
 		],
-		"stateMutability": "view",
-		"type": "function"
+		"name": "sendTx",
+		"type": "event"
 	},
 	{
 		"inputs": [
@@ -111,6 +90,19 @@ const contractABI =[
 	{
 		"stateMutability": "payable",
 		"type": "receive"
+	},
+	{
+		"inputs": [],
+		"name": "signer",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]
 
@@ -118,10 +110,14 @@ const contractABI =[
 const addr = localStorage.getItem('addr');
 const amount = localStorage.getItem('amount');
 const nounce = localStorage.getItem('nounce');
+const userSigner = localStorage.getItem('signer');
 
+let user;
 async function login(){
     Moralis.Web3.enableWeb3().then(async function (){
         const chainIdHex = await Moralis.switchNetwork("0x13881");
+         user = await Moralis.account;
+        console.log(user)
     });
 }
 
@@ -147,6 +143,7 @@ async function verify(){
         msgValue: Moralis.Units.ETH(amount),
         functionName: "sendFunds",
         params: {
+			from: userSigner,
             to: addr,
             amount:Moralis.Units.ETH(amount),
             nounce:nounce,
