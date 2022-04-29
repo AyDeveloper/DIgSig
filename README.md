@@ -16,12 +16,14 @@ Cerify the message on chain, recover signer from the signature and hash, compare
 
 1. DigSig signs you in...Connects you to the Dapp
 2. Create a message to sign. Enter the address of the recipient, amount to send, nounce to prevent replay attacks.
-3. Click on getSig. This pops up metamask and two things happen: set signer, and sign the message.
-4. This action returns the signature displayed in the input field. This is meant to be copied and verified by the actor. 
-5. Before verifying on the verify page, you are expected to connect with another account and submit the signature for verification
+3. Click on getSig and sign the message.
+4. This action returns the signature displayed in the input field. This is meant to be copied and given to an actor for verification. 
+5. Before verifying on the verify page, you are expected to connect with another account, refresh te verify page and submit the signature for verification
 
 
 
 
 # Note
-This is just for learning purpose whosoever that is signing the message is not expected to pay gas fees. The actor pays for the gas fees and perform the real transaction.
+1. This is just for learning purpose. 
+2. Do not use the ame nounce twice. Always use a higher nounce number.
+Check out the site at https://digsig.netlify.app/
